@@ -1,12 +1,11 @@
 
 import React from "react";
 import Grid from "./Grid";
+import Cell from "./Cell";
 const App = () => {
-  return (
-    <React.Fragment>
-      <Grid />
-    </React.Fragment>
-  );
+  
+  return <Grid />;
+  //  return Array.from({ length: 12 }, (item,i) => <Cell key={i}/>)
 };
 
 
