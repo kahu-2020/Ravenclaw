@@ -1,8 +1,13 @@
 import React from 'react'
+import Winner from './Winner'
+
 
 const App = () => {
   return (
-    <h1>React development has begun!</h1>
+    <div>
+      <h1>It's a Revenclaw treat!</h1>
+      <Winner />
+    </div>
   )
 }
 
