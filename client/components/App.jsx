@@ -1,9 +1,11 @@
-import React from 'react'
-
+import React from "react";
+import Grid from "./Grid";
 const App = () => {
   return (
-    <h1>React development has begun!</h1>
-  )
-}
+    <React.Fragment>
+      <Grid />
+    </React.Fragment>
+  );
+};
 
-export default App
+export default App;
