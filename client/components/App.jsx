@@ -1,14 +1,13 @@
-import React from 'react'
-import Winner from './Winner'
 
-
+import React from "react";
+import Grid from "./Grid";
 const App = () => {
   return (
-    <div>
-      <h1>It's a Revenclaw treat!</h1>
-      <Winner />
-    </div>
-  )
-}
+    <React.Fragment>
+      <Grid />
+    </React.Fragment>
+  );
+};
 
-export default App
+
+export default App;
