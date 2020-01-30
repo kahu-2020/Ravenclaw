@@ -29,11 +29,32 @@ function createGrid(size, content) {
   console.log(grid);
   return grid;
 }
+// let size = createGrid(10, <Cell size={10} theOne={this.state.theOne}/>);
 
-const Grid = props => {
-  let size = createGrid(10, <Cell size={10} />);
+class Grid extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      theOne: 1
+    }
+  }
 
-  return <div className="container">{size}</div>;
+  renderGrid(size, theOne) {
+    let grid = [];
+    for (var i = 0; i < size; i++) {
+      grid[i] = new Array(size).fill(<Cell size={size} i={i} theOne={theOne}/>);
+    }
+    return grid;
+  }
+
+  render() {
+    return (
+      <div className="container">
+        {this.renderGrid(10, this.state.theOne)}
+      </div>
+    );
+  }
+  
 };
 
 export default Grid;

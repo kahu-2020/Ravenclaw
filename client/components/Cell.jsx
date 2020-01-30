@@ -10,15 +10,32 @@ class Cell extends React.Component {
         backgroundColor: "#CCCCCC",
       },
       styleOdd: {
-        height: "150px",
-        width: "150px",
+        height: 600 / props.size + "px",
+        width: 600 / props.size + "px",
         backgroundColor: "#000000"
-      }
+      },
+      i: props.i,
+      theOne: props.theOne
     };
   }
-
+      //  if props.i == props.theOne then <smiley />
   render() {
-    return <div style={this.state.styleNormal} />;
+    // console.log(this.state.i)
+    // console.log(this.state.theOne)
+    // return (
+    //     <div style={this.state.styleOdd}></div>
+    //   )
+    
+    if (this.state.i == this.state.theOne ) {
+      return (
+        <div style={this.state.styleOdd}></div>
+      )
+    } else {
+      return (
+        <div style={this.state.styleNormal}></div>
+    );
+    }
+
   }
 }
 export default Cell;
