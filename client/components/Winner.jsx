@@ -14,8 +14,8 @@ class Winner extends React.Component {
         }, 5000)
 
         return (
-            <div>
-                {this.state.name}
+            <div className="winnerbody">
+                <h2>{this.state.name}</h2>
                <br></br>
 
                 <centre>
