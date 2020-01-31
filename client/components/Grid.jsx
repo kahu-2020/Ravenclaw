@@ -35,8 +35,17 @@ class Grid extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      theOne: 100
+      theOne: 8
     };
+    this.onMouseEnter = this.onMouseEnter.bind(this)
+  }
+
+  onMouseEnter() {
+    console.log(this.state.theOne)
+    this.setState({
+      theOne: Math.ceil(Math.random() * 100)
+      
+    })
   }
 
   renderGrid(size, theOne) {
@@ -51,7 +60,7 @@ class Grid extends React.Component {
     for (let i = 0; i < size; i++) {
       for (let j = 0; j < size; j++) {
         count++;
-        grid.push(<Cell size={size} i={count} theOne={theOne} />);
+        grid.push(<Cell size={size} i={count} theOne={theOne} handleMouseOver = {this.onMouseEnter}/>);
       }
     }
     return grid;
@@ -59,7 +68,12 @@ class Grid extends React.Component {
 
   render() {
     return (
-      <div className="container">{this.renderGrid(10, this.state.theOne)}</div>
+      <div 
+      // onMouseOver={this.onMouseEnter}
+
+      className="container">{this.renderGrid(10, this.state.theOne)}
+      
+      </div>
     );
   }
 }
