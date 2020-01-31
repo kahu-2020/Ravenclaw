@@ -1,43 +1,18 @@
 import React from "react";
 import Cell from "./Cell";
+import Winner from './Winner'
 
-// const Grid = props => {
-//   const newArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
-//   return (
-//       <div className="container">
-//         <Cell />
-//     </div>
-//   );
-// };
-// function displayGrid(grid) {
-//   let displayRow = "";
-//   for (let i = 0; i < grid.length; i++) {
-//     let col = grid;
-//     for (let j = 0; j < col.length; j++) {
-//       displayRow += col[i][j] + "";
-//     }
-//   }
-//   console.log(displayRow)
-//   return displayRow; // I need to be able to breakreturn here
-// }
 
-function createGrid(size, content) {
-  let grid = [];
-  for (var i = 0; i < size; i++) {
-    grid[i] = new Array(size).fill(content);
-  }
-  console.log(grid);
-  return grid;
-}
-// let size = createGrid(10, <Cell size={10} theOne={this.state.theOne}/>);
 
 class Grid extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      theOne: 8
+      theOne: 8,
+      hasWon: false
     };
     this.onMouseEnter = this.onMouseEnter.bind(this)
+    this.onClick = this.onClick.bind(this)
   }
 
   onMouseEnter() {
@@ -45,6 +20,12 @@ class Grid extends React.Component {
     this.setState({
       theOne: Math.ceil(Math.random() * 100)
       
+    })
+  }
+
+  onClick() {console.log('hi')
+    this.setState({
+      hasWon: true
     })
   }
 
@@ -60,7 +41,7 @@ class Grid extends React.Component {
     for (let i = 0; i < size; i++) {
       for (let j = 0; j < size; j++) {
         count++;
-        grid.push(<Cell size={size} i={count} theOne={theOne} handleMouseOver = {this.onMouseEnter}/>);
+        grid.push(<Cell size={size} i={count} theOne={theOne} handleClickEvent = {this.onClick} handleMouseOver = {this.onMouseEnter}/>);
       }
     }
     return grid;
@@ -71,7 +52,8 @@ class Grid extends React.Component {
       <div 
       // onMouseOver={this.onMouseEnter}
 
-      className="container">{this.renderGrid(10, this.state.theOne)}
+      className="container">{this.state.hasWon ? <Winner/> :
+        this.renderGrid(10, this.state.theOne )}
       
       </div>
     );

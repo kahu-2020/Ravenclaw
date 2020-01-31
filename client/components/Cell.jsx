@@ -22,7 +22,8 @@ class Cell extends React.Component {
 
     if (this.props.i == this.props.theOne ) {
       return (
-        <div style={this.state.styleOdd} onMouseOver={this.props.handleMouseOver }></div>
+        <div style={this.state.styleOdd} onMouseOver={this.props.handleMouseOver }
+        onClick={this.props.handleClickEvent}></div>
         
       )
     } else {
