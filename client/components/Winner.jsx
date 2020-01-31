@@ -1,11 +1,9 @@
 import React from 'react'
-import { yieldExpression } from '@babel/types'
-
 
 class Winner extends React.Component {
     constructor() {
         super()
-        this.state = {name: 'You are win!',
+        this.state = {name: 'You have won!',
             nametwo: 'Yes, you are!',
         }
     }
@@ -18,17 +16,17 @@ class Winner extends React.Component {
         return (
             <div>
                 {this.state.name}
-                <br></br>
-                {Array.from({ length: 10 }, (item,i) => <img className='spinner' src='/images/pngsnow.png' />)}
-                                
-                <br></br>
-                {Array.from({ length: 10 }, (item,i) => <img className='spinner' src='/images/snowflake2.png' />)}
-                
-                <br></br>
-                {Array.from({ length: 10 }, (item,i) => <img className='spinner' src='/images/snowflake1.png' />)}
-                <br></br><br></br>
+               <br></br>
+
+                <centre>
+                {Array.from({ length: 5 }, (item,i) => <img className='spinner' src='/images/snowflake2.png' />)}
+                </centre>                
+               
+               <br></br>
+               <br></br>
 
                 {this.state.nametwo}
+
             </div>
         )
     }

@@ -6,6 +6,8 @@
     -moz-animation:spin 4s linear infinite;
     animation:spin 4s linear infinite;
     opacity: 0.5;
+    align-content: center;
+    margin: 10%;
   }
 
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
