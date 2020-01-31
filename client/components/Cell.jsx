@@ -28,7 +28,7 @@ class Cell extends React.Component {
       )
     } else {
       return (
-        <div style={this.state.styleNormal} ></div>
+        <div style={this.state.styleNormal}></div>
     );
     }
 

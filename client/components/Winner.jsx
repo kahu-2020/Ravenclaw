@@ -19,7 +19,7 @@ class Winner extends React.Component {
                <br></br>
 
                 <centre>
-                {Array.from({ length: 5 }, (item,i) => <img className='spinner' src='/images/snowflake2.png' />)}
+                {Array.from({ length: 6 }, (item,i) => <img className='spinner' src='/images/snowflake2.png' />)}
                 </centre>                
                
                <br></br>
