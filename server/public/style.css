@@ -1,0 +1,33 @@
+.spinner {
+    margin-top: 5rem;
+    width: 5rem;
+    height: 5rem;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+    opacity: 0.5;
+    align-content: center;
+    margin: 10%;
+  }
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+body {
+  background-image: url("/images/Ravenclaw.png");
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 50px;
+}
+
+h1 {
+  opacity: 0.8;
+  color: white;
+}
