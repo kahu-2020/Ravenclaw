@@ -1,5 +1,5 @@
 import React from "react";
-
+import Grid from './Grid'
 class Cell extends React.Component {
   constructor(props) {
     super(props);
@@ -14,21 +14,16 @@ class Cell extends React.Component {
         width: 600 / props.size + "px",
         backgroundColor: "#000000"
       },
-      i: props.i,
-      theOne: props.theOne
     };
-  }
-      //  if props.i == props.theOne then <smiley />
-  render() {
-    // console.log(this.state.i)
-    // console.log(this.state.theOne)
-    // return (
-    //     <div style={this.state.styleOdd}></div>
-    //   )
     
-    if (this.state.i == this.state.theOne ) {
+  }
+  
+  render() {
+
+    if (this.props.i == this.props.theOne ) {
       return (
-        <div style={this.state.styleOdd}></div>
+        <div style={this.state.styleOdd} onMouseOver={this.props.handleMouseOver }></div>
+        
       )
     } else {
       return (
